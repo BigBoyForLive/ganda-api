@@ -21,7 +21,7 @@ app.use(
 );
 
 app.use("/user", require("./routes/user.route"));
-app.use("/", require("./routes/CreateTable.route"));
+app.use("/table", require("./routes/CreateTable.route"));
 
 const URI = process.env.MONGODB_URL;
 

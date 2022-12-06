@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-/// oauth 0 : nom et mot de passe 
+/// oauth 0 : nom et mot de passe
 /// oauth 1 : nom numero de telephone et mdp
 
 const userSchema = new mongoose.Schema(
@@ -23,23 +23,28 @@ const userSchema = new mongoose.Schema(
       type: Number,
       default: 0, // 0 pour les visiteurs non instcrits , 1 pour les utilisateurs inscrits , 2 pour les hotes , 3 pour les admins , 4 pour le superAdmin
     },
-    createur : {
-    type: String,
-    trim: true
+    createur: {
+      type: String,
+      trim: true,
     },
     reservations: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Tables", 
+        ref: "Tables",
       },
     ],
 
     tables: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Tables", 
+        ref: "Tables",
       },
     ],
+
+    value: {
+      type: String,
+      default: 0.2,
+    },
     avatar: {
       type: String,
       default:
